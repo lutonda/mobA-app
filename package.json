@@ -1,0 +1,26 @@
+{
+  "name": "modsapp",
+  "version": "1.0.0",
+  "description": "webApi for curencies",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lutonda/mobA-app.git"
+  },
+  "author": "Sebastião Lutonda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lutonda/mobA-app/issues"
+  },
+  "homepage": "https://github.com/lutonda/mobA-app#readme",
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  }
+}
