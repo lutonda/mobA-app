@@ -10,40 +10,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
-const Version_1 = require("./Version");
-let Currency = class Currency {
+let Version = class Version {
 };
 __decorate([
     typeorm_1.PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
-], Currency.prototype, "id", void 0);
+], Version.prototype, "id", void 0);
 __decorate([
     typeorm_1.Column(),
-    __metadata("design:type", String)
-], Currency.prototype, "money", void 0);
-__decorate([
-    typeorm_1.Column("double"),
     __metadata("design:type", Number)
-], Currency.prototype, "value", void 0);
+], Version.prototype, "version", void 0);
 __decorate([
     typeorm_1.Column("text"),
     __metadata("design:type", String)
-], Currency.prototype, "description", void 0);
+], Version.prototype, "description", void 0);
 __decorate([
     typeorm_1.Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' }),
     __metadata("design:type", Date)
-], Currency.prototype, "createdAt", void 0);
-__decorate([
-    typeorm_1.OneToOne(type => Version_1.Version),
-    typeorm_1.JoinColumn(),
-    __metadata("design:type", Version_1.Version)
-], Currency.prototype, "version", void 0);
+], Version.prototype, "createdAt", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", Boolean)
-], Currency.prototype, "isPublished", void 0);
-Currency = __decorate([
+], Version.prototype, "isPublished", void 0);
+Version = __decorate([
     typeorm_1.Entity()
-], Currency);
-exports.Currency = Currency;
-//# sourceMappingURL=Currency.js.map
+], Version);
+exports.Version = Version;
+//# sourceMappingURL=Version.js.map

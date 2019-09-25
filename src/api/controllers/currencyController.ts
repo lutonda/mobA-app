@@ -3,6 +3,18 @@ import { Source } from "../../application/Source";
 
 // Display detail page for a specific Author.
 exports.getOne = function(req, res) {
+    const peopleObj = {
+
+    name: "jim",
+    age: 20,
+
+    namex: "tim",
+    agexx: 22
+
+}
+
+    const peopleArray = Object.keys(peopleObj).map(i => [i,peopleObj[i]])
+    console.log(peopleArray);
     res.send('NOT IMPLEMENTED: Author detail: ' + req.params.id);
 };
 

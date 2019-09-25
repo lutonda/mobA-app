@@ -1,4 +1,5 @@
-import {Entity, Column, PrimaryGeneratedColumn} from "typeorm";
+import {Entity, Column, PrimaryGeneratedColumn,OneToOne, JoinColumn} from "typeorm";
+import { Version } from "./Version";
 
 @Entity()
 export class Currency {
@@ -9,11 +10,18 @@ export class Currency {
     @Column()
     money: string;
 
+    @Column("double")
+    value: number;
+
     @Column("text")
     description: string;
 
-    @Column("double")
-    value: number;
+    @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP'})
+    createdAt: Date;
+
+    @OneToOne(type => Version)
+    @JoinColumn()
+    version: Version;
 
     @Column()
     isPublished: boolean;
