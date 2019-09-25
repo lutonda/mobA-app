@@ -12,6 +12,15 @@
         "runtimeExecutable": "npm",
         "runtimeArgs": ["run-script", "debug"],
         "port": 8080
-        }
+        },
+        {
+            "name": "Launch via npm 2",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["run-script", "debug"],
+            "port": 9229
+            }
   ]
 }

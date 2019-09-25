@@ -1,0 +1,19 @@
+{
+   "type": "mysql",
+   "host": "nova-erp.com",
+   "port": 3306,
+   "username": "novanet_mob_app",
+   "password": "mob_app_",
+   "database": "novanet_mob_app",
+   "synchronize": true,
+   "logging": false,
+   "entities": [
+      "src/entity/**/*.ts"
+   ],
+   "migrations": [
+      "src/migration/**/*.ts"
+   ],
+   "subscribers": [
+      "src/subscriber/**/*.ts"
+   ]
+}
