@@ -8,13 +8,32 @@ require("reflect-metadata");
 const express_1 = __importDefault(require("express"));
 const app = express_1.default();
 const port = 3000;
+const typeorm_1 = require("typeorm");
 const bodyParser = require('body-parser');
+typeorm_1.createConnection({
+    type: "mysql",
+    host: "nova-erp.com",
+    port: 3306,
+    username: "novanet_mob_app",
+    password: "mob_app_",
+    database: "novanet_mob_app",
+    entities: [
+        __dirname + "/entities/*.js"
+    ],
+    synchronize: true,
+}).then(connection => {
+    // here you can start to work with your entities
+}).catch(err => {
+    console.log(err);
+});
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-let catalog = require('./api/routes/catalog');
 let index = require('./api/routes/index');
 app.use('/', index);
-app.use('/api/:version/currencies', catalog);
+let currency = require('./api/routes/currencyRoutes');
+app.use('/api/:version/currencies', currency);
+let sync = require('./api/routes/syncRoutes');
+app.use('/api/:version/sync', sync);
 app.listen(port, err => {
     if (err) {
         return console.error(err);

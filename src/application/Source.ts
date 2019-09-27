@@ -41,21 +41,6 @@ export class Source {
         console.log("Engine is  :   " + this.engine)
 
         return  final;
-
-        /*
-        request(config.xe.url, { json: true }, (err, res, body) => {
-            if (err) {
-                final = err;
-
-            } else {
-                final = body;
-                console.log(body);
-            }
-            return final
-        });*/
-
-        return final;
-        console.log("Engine is  :   " + this.engine)
     }
 }
 

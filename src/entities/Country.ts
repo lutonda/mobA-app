@@ -1,27 +1,22 @@
 import {Entity, Column, PrimaryGeneratedColumn,OneToOne, JoinColumn, BaseEntity} from "typeorm";
-import { Version } from "./Version";
 
 @Entity()
-export class Currency extends BaseEntity {
+export class Country extends BaseEntity {
 BaseEntity
     @PrimaryGeneratedColumn()
     id: number;
 
     @Column()
-    money: string;
-
-    @Column("double")
-    value: number;
+    name: string;
 
     @Column("text")
-    description: string;
+    alpha2: string;
+
+    @Column("text")
+    alpha3: string;
 
     @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP'})
     createdAt: Date;
-
-    @OneToOne(type => Version)
-    @JoinColumn()
-    version: Version;
 
     @Column()
     isPublished: boolean;
