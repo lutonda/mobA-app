@@ -10,11 +10,19 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const Currency_1 = require("../../entities/Currency");
+const CurrencyApp_1 = require("../../application/CurrencyApp");
 // Display detail page for a specific Author.
 exports.getOne = function (req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         let currency = yield Currency_1.Currency.findOne({ money: req.params.id });
         res.send(currency);
+    });
+};
+// Display detail page for a specific Author.
+exports.getFromTo = function (req, res) {
+    return __awaiter(this, void 0, void 0, function* () {
+        let final = yield CurrencyApp_1.CurrencyApp.convert(req.query.from, req.query.to, req.query.amount);
+        res.send([final]);
     });
 };
 // Display Author create form on GET.
