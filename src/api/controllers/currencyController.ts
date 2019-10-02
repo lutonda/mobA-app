@@ -27,8 +27,8 @@ exports.getFromTo = async function(req, res) {
 
 // Display Author create form on GET.
 exports.getAll = async function(req, res) {
-    
-    let final={};
+
+    let final=await Currency.find();
 
     res.send(final);
 };

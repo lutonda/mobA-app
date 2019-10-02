@@ -14,21 +14,23 @@ const CurrencyApp_1 = require("../../application/CurrencyApp");
 // Display detail page for a specific Author.
 exports.getOne = function (req, res) {
     return __awaiter(this, void 0, void 0, function* () {
-        let currency = yield Currency_1.Currency.findOne({ money: req.params.id });
+        let currency = yield Currency_1.Currency
+            .findOne({ money: req.params.id });
         res.send(currency);
     });
 };
-// Display detail page for a specific Author.
+// Display the conversion
 exports.getFromTo = function (req, res) {
     return __awaiter(this, void 0, void 0, function* () {
-        let final = yield CurrencyApp_1.CurrencyApp.convert(req.query.from, req.query.to, req.query.amount);
+        let final = yield CurrencyApp_1.CurrencyApp
+            .convert(req.query.from, req.query.to, req.query.amount);
         res.send([final]);
     });
 };
 // Display Author create form on GET.
 exports.getAll = function (req, res) {
     return __awaiter(this, void 0, void 0, function* () {
-        let final = {};
+        let final = yield Currency_1.Currency.find();
         res.send(final);
     });
 };
