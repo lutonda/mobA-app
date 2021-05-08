@@ -30,6 +30,6 @@
     "reflect-metadata": "^0.1.13",
     "reload": "^3.0.1",
     "request": "^2.88.0",
-    "typeorm": "^0.2.19"
+    "typeorm": "^0.2.25"
   }
 }
