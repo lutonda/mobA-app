@@ -25,7 +25,7 @@
   "dependencies": {
     "@types/node": "^12.7.7",
     "axios": "^0.19.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "mysql": "^2.17.1",
     "reflect-metadata": "^0.1.13",
     "reload": "^3.0.1",
